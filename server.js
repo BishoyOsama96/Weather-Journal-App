@@ -40,3 +40,14 @@ app.get('/all',(req,res)=>{
     ...
     ${weatherData}`);
 });
+// POST Route I: Server Side
+app.post('/add',(req,res)=>{
+    // send data to projectData
+    projectData.temp =req.body.temp;
+    projectData.date =req.body.date;
+    projectData.feeling =req.body.feeling;
+    // post the data to the file
+    res.send(projectData);
+    //test
+    console.log('data received');
+});
