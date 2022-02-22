@@ -48,3 +48,18 @@ const PostData = async (url = '',projectData={})=>{
         console.log('there is an error: '+error);
     }
 };
+// event listener to an existing HTML button from DOM using Vanilla JS
+//button onClick listener
+document.getElementById('generate').addEventListener('click',()=>{
+    // save user`s zip code
+    const cityZipCode = document.getElementById('zip').value;
+    // save user`s feelings
+    const userFeelings = document.getElementById('feelings').value;
+    // access the API
+    getData(baseURL,cityZipCode,apiKey)
+    // using chain promises to update data
+    .then((addData)=>{
+        // return the data to the server
+        PostData('/add',{temp:addData,data:newDate,feeling:userFeelings});
+    })
+});
