@@ -29,7 +29,7 @@ const server = app.listen(port,()=>{
 // GET Route I: Server Side
 app.get('/all',(req,res)=>{
     // convert wearherData to json file
-    const weatherData =json.stringify(projectData);
+    const weatherData =JSON.stringify(projectData);
     // send data on projectData file
     res.send(weatherData);
     // just for test
