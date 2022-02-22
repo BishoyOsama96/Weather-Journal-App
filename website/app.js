@@ -1,5 +1,8 @@
+const { response } = require("express");
+
 /* Global Variables */
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+let data = null ;
 // Personal API Key for OpenWeatherMap API
 const apiKey = '<your_api_key>&units=a86ddcd72bd031597483ce10ddb70d77';
 
@@ -14,9 +17,9 @@ const getData = async (baseURL,cityZipCode,apiKey)=>{
 
     try {
         // get data from the server and convert it to json
-        const receivedData = await response.json();
-        const temp = receivedData.main.temp;
-        const cityName = receivedData.main.name;
+        data = await response.json();
+        const temp = data.main.temp;
+        const cityName = data.main.name;
         // return the temperature and city name
         return ({temp: temp, name: cityName});
 
@@ -27,4 +30,21 @@ const getData = async (baseURL,cityZipCode,apiKey)=>{
         console.log("there is an error: ",error);
     }
 
+};
+// POST Route II: Client Side
+const PostData = async (url = '',projectData={})=>{
+    const response =await fetch(url,{
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(projectData)
+    });
+    try {
+        data = await response.json();
+        return(data);
+    }
+     catch (error) {
+        // appropriately handle the error
+        console.log('there is an error: '+error);
+    }
 };
