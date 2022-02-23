@@ -5,7 +5,7 @@ const apiKey = "&units=metric&appid=a86ddcd72bd031597483ce10ddb70d77";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + 1 + "." + d.getDate() + "." + d.getFullYear();
+let newDate = d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear();
 
 // GET Route II: Client Side
 const getData = async (baseURL, cityZipCode, apiKey) => {
