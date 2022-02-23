@@ -67,7 +67,7 @@ const retrieveData = async () => {
     console.log(dataRetrieved);
     // Write updated data to DOM elements
     document.getElementById("date").textContent = dataRetrieved.date;
-    document.getElementById("temp").textContent = dataRetrieved.temp.temp;
+    document.getElementById("temp").innerHTML = dataRetrieved.temp.temp+' &deg;C';
     document.getElementById("content").textContent = dataRetrieved.feeling;
    
     
