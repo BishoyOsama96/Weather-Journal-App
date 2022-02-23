@@ -4,12 +4,12 @@ Weather app using openWeatherMap API and asyncoronus JavaScript
 
 ## Table of Contents
 
-- [Weather-Journal App Project](#weather-journal-app-project)
-  - [Table of Contents](#table-of-contents)
-  - [Instructions](#instructions)
-  - [Development](#development)
-  - [Helping Resources](#helping-resources)
-    - [Credits](#credits)
+* [Weather-Journal App Project](#weather-journal-app-project)
+* [Table of Contents](#table-of-contents)
+* [Instructions](#instructions)
+* [Development](#development)
+* [Helping Resources](#helping-resources)
+* [Credits](#credits)
 
 ## Instructions
 to be able to run the application you need to  Install node.js , express , cors and body-parser.
